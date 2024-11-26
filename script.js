@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Menu Toggle for mobile view
+  const menuToggle = document.getElementById("menu-toggle");
+  const headerMenu = document.getElementById("header-menu");
+
+  menuToggle.addEventListener("click", () => {
+    headerMenu.classList.toggle("show");
+  });
+
+  // Ensure menu visibility resets on resizing to larger screens
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      headerMenu.classList.remove("show");
+    }
+  });
+
+  // Initialize schedule (Day-wise schedule)
   const schedule = {
     monday: ["Mathematics"],
     tuesday: ["Reasoning"],
