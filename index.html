@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0, maximum-scale=1">
+  <title>Interactive Timetable</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Interactive Timetable</h1>
+    </div>
+    <button id="toggle-theme" class="theme-toggle">🌙 Dark Mode</button>
+    <!-- Live Clock & Date -->
+  <div id="clock-date-container" class="clock-container">
+    <div id="current-date"></div>
+    <div id="clock-display"></div>
+  </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Day-wise Schedule -->
+    <section class="tasks">
+      <h3>Day-Wise Schedule</h3>
+      <div id="selected-day">Day:-</div>
+      <table id="timetable">
+        <thead>
+          <tr>
+            <th>Time Duration</th>
+            <th>Subject</th>
+            <th>Custom Topic</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic content injected by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Custom Timer Section -->
+    <section class="custom-timer-section">
+      <h3>Set Custom Timer</h3>
+      <form id="custom-timer-form">
+        <input type="text" id="custom-task" class="modern-input" placeholder="Enter Task Name" required>
+        <input type="text" id="custom-subject" class="modern-input" placeholder="Enter Subject" required>
+        <input type="number" id="custom-duration" class="modern-input" placeholder="Duration (minutes)" required min="1">
+        <button type="submit" id="custom-start-btn" class="modern-button">Start Custom Timer</button>
+      </form>
+    </section>
+
+    <!-- Timer Tile Section (Right Side) -->
+    <section class="timer-container">
+      <div class="timer-box">
+        <div id="current-task">Current Task: Not Started</div>
+        <div id="timer">Timer: 00:00</div>
+        <div id="timer-info">
+          <p><strong>Duration:</strong> <span id="timer-duration">--</span> minutes</p>
+          <p><strong>Subject:</strong> <span id="timer-subject">--</span></p>
+          <p><strong>Topic:</strong> <span id="timer-topic">--</span></p>
+        </div>
+        <div class="controls">
+          <button id="pause-timer" disabled class="modern-button">Pause</button>
+          <button id="reset-timer" disabled class="modern-button">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="log-history">
+      <h3>History & Log</h3>
+      <div id="log-display"></div>
+      <button id="download-log" class="modern-button">Download Log as JSON</button>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Interactive Timetable</p>
+  </footer>
+</body>
+</html>
